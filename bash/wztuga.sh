@@ -1,5 +1,10 @@
 #!/bin/bash
-rm pb$1*
+if [ $# -lt 3 ]
+then
+    echo "usage: ./wztuga.sh <season_number> <start_episode> <end_episode>"
+    exit
+fi
+rm pb$1* 2> /dev/null #quiet!!!
 for i in $(seq $2 $3)
 do
 echo $i
